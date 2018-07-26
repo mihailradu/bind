@@ -1,0 +1,21 @@
+logging {
+                channel default_file {
+                        file "/data/log/default.log" versions 3 size 5m;
+                        severity info;
+                        print-category yes;
+                        print-severity yes;
+                        print-time yes;
+                };
+                channel queries_file {
+                        file "/data/log/queries.log" versions 3 size 100m;
+                        severity info;
+                        print-category yes;
+                        print-severity yes;
+                        print-time yes;
+                };
+
+                category default{ default_file; };
+                category queries { queries_file; };
+
+        };
+
